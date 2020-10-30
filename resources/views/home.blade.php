@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Instagram
+Instagram Clone
 @endsection
 
 @section('content')
@@ -17,8 +17,16 @@ Instagram
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are successfully logged in!') }}
                     <a href="/home/profile" >Profile</a>
+                    //
+                    
+                    $status =1;
+ $info = JOBS::where(function($query) use ($status){        
+         $query->where('status',$status);
+         })->get();
+print_r($info);
+                    //
                 </div>
             </div>
         </div>
